@@ -1,0 +1,72 @@
+{
+  "name": "@kriton/results-engine",
+  "version": "1.0.0",
+  "description": "Pure, deterministic, independently-auditable results engine for awards judging: weighted means, Z-score normalisation, Bradley-Terry, a no-code-execution formula language, and reproducible ranking. Zero runtime dependencies.",
+  "keywords": [
+    "awards",
+    "judging",
+    "scoring",
+    "ranking",
+    "bradley-terry",
+    "deterministic",
+    "auditable",
+    "reproducible"
+  ],
+  "license": "Apache-2.0",
+  "author": "Kriton",
+  "homepage": "https://github.com/kritonapp/results-engine#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kritonapp/results-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kritonapp/results-engine/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "prepack": "npm run clean && npm run build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@types/node": "^25.9.1",
+    "@vitest/coverage-v8": "^4.1.8",
+    "eslint": "^9.39.4",
+    "fast-check": "4.8.0",
+    "prettier": "^3.8.3",
+    "simple-statistics": "7.9.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.46.0",
+    "vitest": "^4.1.8"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
