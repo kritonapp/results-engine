@@ -42,4 +42,11 @@ export default tseslint.config(
       'no-restricted-syntax': 'off',
     },
   },
+  {
+    // Node build/CLI scripts run on Node and use its globals.
+    files: ['scripts/**/*.mjs', '*.mjs'],
+    languageOptions: {
+      globals: { console: 'readonly', process: 'readonly' },
+    },
+  },
 );
