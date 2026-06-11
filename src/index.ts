@@ -69,3 +69,17 @@ export {
   type StrengthResult,
 } from './bradley-terry.js';
 export { resolveTiebreaks } from './tiebreak.js';
+
+/* The verify tool: recompute an exported Kriton snapshot and confirm it matches. */
+export {
+  verifySnapshot,
+  parseSnapshot,
+  SNAPSHOT_SCHEMA_VERSION,
+  type VerifiableSnapshot,
+  type VerifiableCategory,
+  type VerificationReport,
+  type CategoryVerification,
+} from './verify.js';
+
+/* The synthetic example corpus (goldens + demo data). */
+export { EXAMPLES, exampleByKey, type Example } from './examples.js';

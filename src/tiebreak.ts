@@ -87,9 +87,7 @@ export function resolveTiebreaks(
   chain: readonly TiebreakRule[],
   manualOrder?: ManualOrder,
 ): EntryResult[] {
-  const sorted = [...entries].sort(
-    (a, b) => b.computedScore - a.computedScore || byId(a, b),
-  );
+  const sorted = [...entries].sort((a, b) => b.computedScore - a.computedScore || byId(a, b));
 
   const out: EntryResult[] = [];
   let i = 0;

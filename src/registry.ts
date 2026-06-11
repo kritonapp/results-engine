@@ -149,7 +149,10 @@ const asScalar = (v: EngineValue, context: string): number => {
  * Evaluate an AST against a flat bindings map (dotted reference path → value). Pure;
  * no code execution. Aggregator calls dispatch through {@link FUNCTION_REGISTRY}.
  */
-export function evaluateAst(node: AstNode, bindings: Readonly<Record<string, EngineValue>>): EngineValue {
+export function evaluateAst(
+  node: AstNode,
+  bindings: Readonly<Record<string, EngineValue>>,
+): EngineValue {
   switch (node.kind) {
     case 'number':
       return node.value;

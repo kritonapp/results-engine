@@ -1,4 +1,9 @@
-import { mean as ssMean, median as ssMedian, quantile as ssQuantile, standardDeviation } from './stats.js';
+import {
+  mean as ssMean,
+  median as ssMedian,
+  quantile as ssQuantile,
+  standardDeviation,
+} from './stats.js';
 
 /**
  * Pure aggregator primitives (Decision 5b / M5 §C3), backed by the vendored stats

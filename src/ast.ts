@@ -65,15 +65,7 @@ export class FormulaParseError extends Error {
 
 /* ── Tokenizer ─────────────────────────────────────────────────────────────── */
 
-type TokenType =
-  | 'number'
-  | 'identifier'
-  | 'op'
-  | 'lparen'
-  | 'rparen'
-  | 'comma'
-  | 'dot'
-  | 'eq';
+type TokenType = 'number' | 'identifier' | 'op' | 'lparen' | 'rparen' | 'comma' | 'dot' | 'eq';
 interface Token {
   readonly type: TokenType;
   readonly value: string;
@@ -184,7 +176,10 @@ class Parser {
 
   private expression(): AstNode {
     let left = this.term();
-    while (this.peek()?.type === 'op' && (this.peek()!.value === '+' || this.peek()!.value === '-')) {
+    while (
+      this.peek()?.type === 'op' &&
+      (this.peek()!.value === '+' || this.peek()!.value === '-')
+    ) {
       const op = this.next().value as '+' | '-';
       left = { kind: 'binary', op, left, right: this.term() };
     }

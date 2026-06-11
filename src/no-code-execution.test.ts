@@ -18,10 +18,16 @@ import { describe, expect, it } from 'vitest';
 
 const SRC_DIR = dirname(fileURLToPath(import.meta.url));
 
-/** Production engine sources: src/*.ts excluding tests. */
+/**
+ * Pure-engine sources: src/*.ts excluding tests and the CLI shell. cli.ts is the impure
+ * entry point (it reads files, writes stdout, exits the process) and is deliberately NOT
+ * part of the pure engine — it only ever calls into it.
+ */
+const NON_ENGINE = new Set(['cli.ts']);
+
 function engineSourceFiles(): string[] {
   return readdirSync(SRC_DIR)
-    .filter((f) => f.endsWith('.ts') && !f.endsWith('.test.ts'))
+    .filter((f) => f.endsWith('.ts') && !f.endsWith('.test.ts') && !NON_ENGINE.has(f))
     .map((f) => join(SRC_DIR, f));
 }
 

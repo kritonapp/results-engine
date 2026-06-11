@@ -1,0 +1,96 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`example corpus > approval-picks > matches its pinned golden ranking and scores 1`] = `
+[
+  {
+    "computedScore": 3,
+    "entryId": "aurora",
+    "rank": 1,
+  },
+  {
+    "computedScore": 2,
+    "entryId": "borealis",
+    "rank": 2,
+  },
+  {
+    "computedScore": 1,
+    "entryId": "cascade",
+    "rank": 3,
+  },
+]
+`;
+
+exports[`example corpus > pairwise-bradley-terry > matches its pinned golden ranking and scores 1`] = `
+[
+  {
+    "computedScore": 0.9993324481898732,
+    "entryId": "aurora",
+    "rank": 1,
+  },
+  {
+    "computedScore": 0.0006675518101267198,
+    "entryId": "borealis",
+    "rank": 2,
+  },
+  {
+    "computedScore": 0,
+    "entryId": "cascade",
+    "rank": 3,
+  },
+]
+`;
+
+exports[`example corpus > rubric-weighted > matches its pinned golden ranking and scores 1`] = `
+[
+  {
+    "computedScore": 8.166666666666668,
+    "entryId": "aurora",
+    "rank": 1,
+  },
+  {
+    "computedScore": 7.166666666666666,
+    "entryId": "borealis",
+    "rank": 2,
+  },
+  {
+    "computedScore": 5.166666666666666,
+    "entryId": "cascade",
+    "rank": 3,
+  },
+]
+`;
+
+exports[`example corpus > tiebreak > matches its pinned golden ranking and scores 1`] = `
+[
+  {
+    "computedScore": 7,
+    "entryId": "steady",
+    "rank": 1,
+  },
+  {
+    "computedScore": 7,
+    "entryId": "split",
+    "rank": 2,
+  },
+]
+`;
+
+exports[`example corpus > zscore-normalised > matches its pinned golden ranking and scores 1`] = `
+[
+  {
+    "computedScore": 0.6123724356957945,
+    "entryId": "aurora",
+    "rank": 1,
+  },
+  {
+    "computedScore": 0.6123724356957945,
+    "entryId": "borealis",
+    "rank": 2,
+  },
+  {
+    "computedScore": -1.224744871391589,
+    "entryId": "cascade",
+    "rank": 3,
+  },
+]
+`;

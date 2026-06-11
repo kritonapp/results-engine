@@ -117,15 +117,13 @@ describe('computeResults determinism', () => {
 
 describe('Bradley-Terry convergence', () => {
   const entryId = fc.constantFrom('A', 'B', 'C', 'D');
-  const comparisonArb = fc
-    .record({ a: entryId, b: entryId, w: fc.constantFrom(0, 1, 2) })
-    .map(
-      ({ a, b, w }): Comparison => ({
-        entryAId: a,
-        entryBId: b,
-        winnerEntryId: w === 0 ? null : w === 1 ? a : b,
-      }),
-    );
+  const comparisonArb = fc.record({ a: entryId, b: entryId, w: fc.constantFrom(0, 1, 2) }).map(
+    ({ a, b, w }): Comparison => ({
+      entryAId: a,
+      entryBId: b,
+      winnerEntryId: w === 0 ? null : w === 1 ? a : b,
+    }),
+  );
 
   it('produces finite, non-negative strengths that sum to 1', () => {
     fc.assert(

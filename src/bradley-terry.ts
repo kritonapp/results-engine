@@ -40,9 +40,9 @@ export function bradleyTerry(comparisons: readonly Comparison[]): StrengthResult
       (a.winnerEntryId ?? '').localeCompare(b.winnerEntryId ?? ''),
   );
 
-  const entryIds = [
-    ...new Set(sortedComparisons.flatMap((c) => [c.entryAId, c.entryBId])),
-  ].sort((a, b) => a.localeCompare(b));
+  const entryIds = [...new Set(sortedComparisons.flatMap((c) => [c.entryAId, c.entryBId]))].sort(
+    (a, b) => a.localeCompare(b),
+  );
 
   if (entryIds.length === 0) return [];
   if (entryIds.length === 1) return [{ entryId: entryIds[0], strength: 1 }];
