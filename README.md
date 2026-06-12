@@ -78,6 +78,11 @@ Each example is a made-up award category (criteria, weights, raw scores). Change
 watch the ranking move, deterministically. The examples are also the regression goldens for this
 package. (The real legacy judging vectors are **not** here; they stay private to the Kriton app.)
 
+No local setup needed:
+[**open this repo in StackBlitz**](https://stackblitz.com/github/kritonapp/results-engine?file=README.md)
+and run the same commands in the in-browser terminal (`npm install`, then `npm test` or
+`node dist/cli.js demo all` after `npm run build`).
+
 ## The neutral, PII-free contract
 
 The engine speaks in anonymous numbers, never tenant data. Identifiers (`entryId`, `voterId`,

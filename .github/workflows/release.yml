@@ -37,9 +37,8 @@ jobs:
       - name: Tarball guard
         run: node scripts/check-pack.mjs
       # --provenance produces a verifiable build attestation linking the artifact to this
-      # public source + workflow run. NODE_AUTH_TOKEN bootstraps the first publish; after a
-      # trusted publisher is configured on npmjs.com it can be removed (OIDC takes over).
+      # public source + workflow run. Tokenless: a trusted publisher (GitHub Actions OIDC,
+      # this repo + workflow + the release environment) is configured on npmjs.com, so no
+      # NPM_TOKEN is needed — id-token: write above is what authenticates the publish.
       - name: Publish to npm
         run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
